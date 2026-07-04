@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        /* Center the entire card on the screen */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9fa0b10; /* Subtle light background */
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        /* The main container card layout */
+        #app {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center;    /* Center elements horizontally */
+            text-align: center;     /* Center text inside elements */
+            max-width: 400px;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        span {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+            color: #e53e3e; /* Error red color */
+        }
+
+        p {
+            color: #4a5568;
+            line-height: 1.5;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        button {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <span>😢</span>
+        <h1>{{error}}</h1>
+        <p>{{description}}</p>
+        <button>{{btnvalue}}</button>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+        createApp({
+            setup(){
+                const error = ref("404")
+                const description = ref("Lorem ipsum dolor sit amet consectetur adipisicing elit. Elit proin duis netus.")
+                const btnvalue = ref("Go Home") // Renamed to fit the 404 theme nicely
+                
+                return {
+                    error, 
+                    description, 
+                    btnvalue
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>
+
+
