@@ -8,6 +8,7 @@
 <template>
   <div class="screen-wrapper">   
     <div class="card">
+      
       <Header />
       <Main /> 
       <Footer />
@@ -16,8 +17,10 @@
   </div>
 </template>
 
+
+
 <style scoped>
-  /* Fills the entire screen and centers the card, ignoring outer body restrictions */
+ 
   .screen-wrapper {
       position: fixed;
       top: 0;
